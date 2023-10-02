@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.0 (2023-08-02)
+
+- **[BREAKING CHANGE]** The find method is now promise based
+
 ## 2.0.0 (2017-03-14)
 
 - **[BREAKING CHANGE]** Returns empty array (no error) if the given address is not found

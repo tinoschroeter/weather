@@ -1,6 +1,6 @@
 # Weather
 
-[![NPM][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage][coverage-image]][coverage-url]
+[![NPM][npm-image]][npm-url]
 
 Weather is a module for obtaining weather information.
 
@@ -13,95 +13,97 @@ npm install weather-js
 ## Usage
 
 ```javascript
-var weather = require('weather-js');
+const Weather = require("weather-js");
+const weather = new Weather();
 
 // Options:
 // search:     location name or zipcode
-// degreeType: F or C
+// degreeType: F or C <optional> default = F
+// lang:       de-DE  <optional> default = en-US
 
-weather.find({search: 'San Francisco, CA', degreeType: 'F'}, function(err, result) {
-  if(err) console.log(err);
-
-  console.log(JSON.stringify(result, null, 2));
-});
+weather
+  .find({ search: "Hamburg, Germany", degreeType: "C", lang: "de-DE" })
+  .then((result) => console.log(result.length))
+  .catch((err) => console.error(err));
 ```
-```bash
+
+```json
 [
   {
     "location": {
-      "name": "San Francisco, CA",
-      "lat": "37.777",
-      "long": "-122.42",
-      "timezone": "-7",
+      "name": "Hamburg, HH",
+      "lat": "53,545",
+      "long": "10,024",
+      "timezone": "2",
       "alert": "",
-      "degreetype": "F",
-      "imagerelativeurl": "http://blob.weather.microsoft.com/static/weather4/en-us/"
+      "degreetype": "C",
+      "imagerelativeurl": "http://blob.weather.microsoft.com/static/weather4/de/"
     },
     "current": {
-      "temperature": "70",
-      "skycode": "32",
-      "skytext": "Sunny",
-      "date": "2017-03-14",
-      "observationtime": "13:15:00",
-      "observationpoint": "San Francisco, California",
-      "feelslike": "70",
-      "humidity": "59",
-      "winddisplay": "3 mph West",
-      "day": "Tuesday",
-      "shortday": "Tue",
-      "windspeed": "3 mph",
-      "imageUrl": "http://blob.weather.microsoft.com/static/weather4/en-us/law/32.gif"
+      "temperature": "16",
+      "skycode": "27",
+      "skytext": "Meist bewölkt",
+      "date": "2023-10-02",
+      "observationtime": "22:25:42",
+      "observationpoint": "Hamburg",
+      "feelslike": "16",
+      "humidity": "94",
+      "winddisplay": "5 km/h West",
+      "day": "Montag",
+      "shortday": "Mo",
+      "windspeed": "5 km/h",
+      "imageUrl": "http://blob.weather.microsoft.com/static/weather4/de/law/27.gif"
     },
     "forecast": [
       {
-        "low": "52",
-        "high": "69",
-        "skycodeday": "31",
-        "skytextday": "Clear",
-        "date": "2017-03-13",
-        "day": "Monday",
-        "shortday": "Mon",
-        "precip": ""
-      },
-      {
-        "low": "52",
-        "high": "70",
-        "skycodeday": "34",
-        "skytextday": "Mostly Sunny",
-        "date": "2017-03-14",
-        "day": "Tuesday",
-        "shortday": "Tue",
-        "precip": "10"
-      },
-      {
-        "low": "56",
-        "high": "63",
-        "skycodeday": "26",
-        "skytextday": "Cloudy",
-        "date": "2017-03-15",
-        "day": "Wednesday",
-        "shortday": "Wed",
-        "precip": "20"
-      },
-      {
-        "low": "50",
-        "high": "64",
+        "low": "15",
+        "high": "23",
         "skycodeday": "28",
-        "skytextday": "Mostly Cloudy",
-        "date": "2017-03-16",
-        "day": "Thursday",
-        "shortday": "Thu",
-        "precip": "10"
+        "skytextday": "Meist bewölkt",
+        "date": "2023-10-02",
+        "day": "Montag",
+        "shortday": "Mo",
+        "precip": "7"
       },
       {
-        "low": "53",
-        "high": "67",
-        "skycodeday": "32",
-        "skytextday": "Sunny",
-        "date": "2017-03-17",
-        "day": "Friday",
-        "shortday": "Fri",
-        "precip": "10"
+        "low": "12",
+        "high": "21",
+        "skycodeday": "11",
+        "skytextday": "Regenschauer",
+        "date": "2023-10-03",
+        "day": "Dienstag",
+        "shortday": "Di",
+        "precip": "83"
+      },
+      {
+        "low": "12",
+        "high": "17",
+        "skycodeday": "9",
+        "skytextday": "Leichter Regen",
+        "date": "2023-10-04",
+        "day": "Mittwoch",
+        "shortday": "Mi",
+        "precip": "53"
+      },
+      {
+        "low": "10",
+        "high": "16",
+        "skycodeday": "11",
+        "skytextday": "Regen",
+        "date": "2023-10-05",
+        "day": "Donnerstag",
+        "shortday": "Do",
+        "precip": "76"
+      },
+      {
+        "low": "14",
+        "high": "16",
+        "skycodeday": "28",
+        "skytextday": "Meist bewölkt",
+        "date": "2023-10-06",
+        "day": "Freitag",
+        "shortday": "Fr",
+        "precip": "23"
       }
     ]
   }
@@ -118,10 +120,4 @@ Licensed under The MIT License (MIT)
 For the full copyright and license information, please view the LICENSE.txt file.
 
 [npm-url]: http://npmjs.org/package/weather-js
-[npm-image]: https://badge.fury.io/js/weather-js.svg
-
-[travis-url]: https://travis-ci.org/devfacet/weather
-[travis-image]: https://travis-ci.org/devfacet/weather.svg?branch=master
-
-[coverage-url]: https://coveralls.io/github/devfacet/weather?branch=master
-[coverage-image]: https://coveralls.io/repos/devfacet/weather/badge.svg?branch=master&service=github
+[npm-image]: https://img.shields.io/badge/npm%20package%20-3.0.0-green

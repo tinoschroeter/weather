@@ -136,4 +136,4 @@ Licensed under The MIT License (MIT)
 For the full copyright and license information, please view the LICENSE.txt file.
 
 [npm-url]: http://npmjs.org/package/weather-js
-[npm-image]: https://img.shields.io/badge/npm%20package%20-3.0.0-green
+[npm-image]: https://img.shields.io/badge/npm%20package%20-3.0.1-green

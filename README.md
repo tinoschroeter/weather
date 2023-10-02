@@ -7,7 +7,7 @@ Weather is a module for obtaining weather information.
 ## Installation
 
 ```bash
-npm install weather-js
+npm i @tinoschroeter/weather-js
 ```
 
 ## Usage

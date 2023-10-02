@@ -25,6 +25,20 @@ weather
   .find({ search: "Hamburg, Germany", degreeType: "C", lang: "de-DE" })
   .then((result) => console.log(result.length))
   .catch((err) => console.error(err));
+
+// async await IIFE version
+try {
+  (async () => {
+    const data = await weather.find({
+      search: "Hamburg, Germany",
+      degreeType: "C",
+      lang: "de-DE",
+    });
+    console.log(data);
+  })();
+} catch (error) {
+  console.error(error);
+}
 ```
 
 ```json

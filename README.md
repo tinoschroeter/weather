@@ -13,7 +13,7 @@ npm i @tinoschroeter/weather-js
 ## Usage
 
 ```javascript
-const Weather = require("weather-js");
+const Weather = require("@tinoschroeter/weather-js");
 const weather = new Weather();
 
 // Options:
@@ -23,7 +23,7 @@ const weather = new Weather();
 
 weather
   .find({ search: "Hamburg, Germany", degreeType: "C", lang: "de-DE" })
-  .then((result) => console.log(result.length))
+  .then((result) => console.log(result))
   .catch((err) => console.error(err));
 
 // async await IIFE version

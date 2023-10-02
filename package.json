@@ -1,5 +1,5 @@
 {
-  "name": "weather-js",
+  "name": "@tinoschroeter/weather-js",
   "version": "3.0.0",
   "description": "A module for obtaining weather information",
   "main": "index.js",

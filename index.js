@@ -20,12 +20,22 @@ class Weather {
     });
   }
 
-  async find(probs) {
-    if (!probs || typeof probs !== "object") {
+  /**
+   * Finds weather information based on the specified options.
+   * @param {Object} props - The options for the weather query.
+   * @param {string} props.search - The search term for the weather location.
+   * @param {string} [props.degreeType="F"] - The type of temperature measurement (e.g., "F" for Fahrenheit).
+   * @param {string} [props.lang="en-US"] - The language for the weather information (e.g., "en-US" for English).
+   * @returns {Promise} - A promise that resolves with the weather information.
+   * @throws {Error} - Throws an error if the options are invalid.
+   */
+
+  async find(props) {
+    if (!props || typeof props !== "object") {
       throw new Error("invalid options");
     }
 
-    const { search = "", degreeType = "F", lang = "en-US" } = probs;
+    const { search = "", degreeType = "F", lang = "en-US" } = props;
 
     this.search = search;
 

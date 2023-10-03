@@ -16,10 +16,12 @@ npm i @tinoschroeter/weather-js
 const Weather = require("@tinoschroeter/weather-js");
 const weather = new Weather();
 
-// Options:
-// search:     location name or zipcode
-// degreeType: F or C <optional> default = F
-// lang:       de-DE  <optional> default = en-US
+/**
+ * Options:
+ * search:     location name or zipcode
+ * degreeType: F or C <optional> default = F
+ * lang:       de-DE  <optional> default = en-US
+ */
 
 weather
   .find({ search: "Hamburg, Germany", degreeType: "C", lang: "de-DE" })
@@ -27,6 +29,7 @@ weather
   .catch((err) => console.error(err));
 
 // async await IIFE version
+
 try {
   (async () => {
     const data = await weather.find({
@@ -136,4 +139,4 @@ Licensed under The MIT License (MIT)
 For the full copyright and license information, please view the LICENSE.txt file.
 
 [npm-url]: http://npmjs.org/package/weather-js
-[npm-image]: https://img.shields.io/badge/npm%20package%20-3.0.1-green
+[npm-image]: https://img.shields.io/badge/npm%20package%20-3.0.2-green

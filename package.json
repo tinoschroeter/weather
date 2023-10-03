@@ -1,7 +1,7 @@
 {
   "name": "@tinoschroeter/weather-js",
-  "version": "3.0.1",
-  "description": "A module for obtaining weather information",
+  "version": "3.0.2",
+  "description": "A module for obtaining weather information (promise-based)",
   "main": "index.js",
   "scripts": {
     "test": "jest"
@@ -16,7 +16,7 @@
   ],
   "author": "Tino Schroeter",
   "license": "MIT",
-  "homepage": "http://github.com/tinoschroeter/weather",
+  "homepage": "http://github.com/tinoschroeter/weather#weather",
   "dependencies": {
     "xml2js": "^0.6.2"
   },

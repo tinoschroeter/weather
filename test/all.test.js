@@ -3,8 +3,9 @@ const weather = new Weather();
 
 test("should find a location with weather information", () => {
   return weather
-    .find({ search: "San Francisco, CA", degreeType: "F", lang: "en-US" })
+    .find({ search: "Hamburg_germany", degreeType: "C", lang: "de-DE" })
     .then((data) => {
+      console.log(data[0]);
       expect(data).toBeInstanceOf(Array);
       expect(data.length).toBeGreaterThan(0);
       expect(data[0].location.lat).toMatch("11.897");

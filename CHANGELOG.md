@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.1 (2025-02-16)
+
+- update tests
+
 ## 3.0.0 (2023-08-02)
 
 - **[BREAKING CHANGE]** The find method is now promise based
@@ -34,3 +38,4 @@
 ## 0.1.0 (2014-06-04)
 
 - Initial release
+

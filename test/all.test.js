@@ -8,8 +8,8 @@ test("should find a location with weather information", () => {
       console.log(data[0]);
       expect(data).toBeInstanceOf(Array);
       expect(data.length).toBeGreaterThan(0);
-      expect(data[0].location.lat).toMatch("11.897");
-      expect(data[0].location.degreetype).toMatch("F");
+      expect(data[0].location.lat).toMatch("53,544");
+      expect(data[0].location.degreetype).toMatch("C");
       expect(data[0].forecast).toBeInstanceOf(Array);
     });
 });
